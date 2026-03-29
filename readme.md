@@ -1,3 +1,5 @@
+This project is being built incrementally to demonstrate backend system design concepts such as event-driven architecture, scalability, and fault tolerance.
+
 ## Current Status
 
 This project is actively being developed to simulate a production-grade event-driven notification system.
