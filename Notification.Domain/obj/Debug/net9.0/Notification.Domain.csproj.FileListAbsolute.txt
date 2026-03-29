@@ -1,0 +1,11 @@
+/Users/ayudhhande/Projects/NotificationSystem/Notification.Domain/obj/Debug/net9.0/Notification.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ayudhhande/Projects/NotificationSystem/Notification.Domain/obj/Debug/net9.0/Notification.Domain.AssemblyInfoInputs.cache
+/Users/ayudhhande/Projects/NotificationSystem/Notification.Domain/obj/Debug/net9.0/Notification.Domain.AssemblyInfo.cs
+/Users/ayudhhande/Projects/NotificationSystem/Notification.Domain/obj/Debug/net9.0/Notification.Domain.csproj.CoreCompileInputs.cache
+/Users/ayudhhande/Projects/NotificationSystem/Notification.Domain/bin/Debug/net9.0/Notification.Domain.deps.json
+/Users/ayudhhande/Projects/NotificationSystem/Notification.Domain/bin/Debug/net9.0/Notification.Domain.dll
+/Users/ayudhhande/Projects/NotificationSystem/Notification.Domain/bin/Debug/net9.0/Notification.Domain.pdb
+/Users/ayudhhande/Projects/NotificationSystem/Notification.Domain/obj/Debug/net9.0/Notification.Domain.dll
+/Users/ayudhhande/Projects/NotificationSystem/Notification.Domain/obj/Debug/net9.0/refint/Notification.Domain.dll
+/Users/ayudhhande/Projects/NotificationSystem/Notification.Domain/obj/Debug/net9.0/Notification.Domain.pdb
+/Users/ayudhhande/Projects/NotificationSystem/Notification.Domain/obj/Debug/net9.0/ref/Notification.Domain.dll
