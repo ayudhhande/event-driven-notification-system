@@ -1,3 +1,4 @@
+using System.Threading.Tasks.Sources;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Notification.API.Services;
@@ -15,11 +16,15 @@ namespace Notification.API.Controllers
             _notificationService = notificationService;
         }
         [HttpPost]
-        public IActionResult SendNotification([FromBody] NotificationRequest request)
+        public async Task<IActionResult> SendNotification([FromBody] NotificationRequest request)
         {
             if(request == null)
                 return BadRequest("Notifactions cannot be null");
-            return Ok(_notificationService.CreateNotificationAsync(request));
+            await _notificationService.CreateNotificationAsync(request);
+            return Ok(new
+            {
+                message = "Event published successfully"
+            });
         }
     }
 }

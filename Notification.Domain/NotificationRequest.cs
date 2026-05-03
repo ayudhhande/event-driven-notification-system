@@ -12,5 +12,5 @@ public class NotificationRequest
     [Required]
     [MaxLength(500)]
     public string Message { get; set; }
-    public PaymentStatus Status { get; set; }
+    public PaymentStatus Status { get; set; } = PaymentStatus.PENDING;
 }
