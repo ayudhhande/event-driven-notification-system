@@ -1,0 +1,30 @@
+# Build
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Rider
+.idea/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+
+# Environment
+appsettings.Development.json
+
+# NuGet
+*.nupkg
+packages/
+
+# Docker
+docker-compose.override.yml
+
+# Test results
+TestResults/
