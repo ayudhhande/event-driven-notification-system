@@ -1,4 +1,5 @@
 using System;
+using System.Text.Json;
 using Confluent.Kafka;
 using Notification.Consumer.Processors;
 using Notification.Domain;
@@ -25,7 +26,8 @@ public class KafkaConsumerWorker : BackgroundService
         while (!stoppingToken.IsCancellationRequested)
         {
             var message = _consumer.Consume(stoppingToken);
-            await _notificationProcessor.ProcessAsync<PaymentEvent>(message.Message.Value);
+            var paymentEvent = JsonSerializer.Deserialize<PaymentEvent>(message.Message.Value);
+            await _notificationProcessor.ProcessAsync(paymentEvent);
         }
     }
 }

@@ -1,8 +1,9 @@
 using System;
+using Notification.Domain;
 
 namespace Notification.Consumer.Processors;
 
 public interface INotificationProcessor
 {
-    Task ProcessAsync<PaymentEvent>(string message);
+    Task ProcessAsync(PaymentEvent paymentEvent);
 }
