@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using Notification.API.Services;
+using Notification.Consumer;
+using Notification.Consumer.BackgroudWorkers;
+using Notification.Consumer.Processors;
 using Notification.Infrastructure;
 using Notification.Infrastructure.Kafka;
 using Notification.Infrastructure.Persistence;
@@ -23,6 +26,7 @@ builder.Services.AddScoped<INotificationService, NotificationService>();
 builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
 builder.Services.AddScoped<IKafkaProducer, KafkaProducer>();
 builder.Services.AddScoped<INotificationService, NotificationService>();
+builder.Services.AddScoped<INotificationProcessor, NotificationProcessor>();
 
 var app = builder.Build();
 
