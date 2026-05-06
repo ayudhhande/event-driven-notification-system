@@ -22,6 +22,7 @@ builder.Services.AddDbContext<NotificationDbContext>(options => options.UseNpgsq
 builder.Services.AddScoped<INotificationService, NotificationService>();
 builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
 builder.Services.AddScoped<IKafkaProducer, KafkaProducer>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
 
 var app = builder.Build();
 

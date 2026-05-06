@@ -4,6 +4,7 @@ using System.Text.Json;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using Notification.Domain;
 
 namespace Notification.Infrastructure.Kafka;
 
@@ -26,7 +27,7 @@ public class KafkaProducer: IKafkaProducer
         _logger = logger;
     }
 
-    public async Task PublishAsync<T>(T message)
+    public async Task PublishAsync<PaymentEvent>(PaymentEvent message)
     {
         try
         {
