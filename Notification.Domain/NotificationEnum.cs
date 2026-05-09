@@ -10,5 +10,6 @@ public enum PaymentStatus
     public enum PaymentEventType
     {
         PaymentSuccess,
-        Failed
+        Failed,
+        Pending
     }

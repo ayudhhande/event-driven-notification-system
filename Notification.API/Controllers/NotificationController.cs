@@ -15,7 +15,7 @@ namespace Notification.API.Controllers
         {
             _notificationService = notificationService;
         }
-        [HttpPost]
+        [HttpPost("SendNotification")]
         public async Task<IActionResult> SendNotification([FromBody] NotificationRequest request)
         {
             if(request == null)

@@ -3,6 +3,7 @@ using System.Text.Json;
 using Confluent.Kafka;
 using Notification.Consumer.Processors;
 using Notification.Domain;
+using Notification.Infrastructure.Persistence;
 
 namespace Notification.Consumer.BackgroudWorkers;
 
@@ -15,12 +16,13 @@ public class KafkaConsumerWorker : BackgroundService
     {
         var config = new ConsumerConfig
         {
-            BootstrapServers = "localhost:9092",
-            GroupId = "notification-consumer-group",
+            BootstrapServers = configuration["Kafka:BootstrapServers"],
+            GroupId = configuration["Kafka:GroupId"],
             AutoOffsetReset = AutoOffsetReset.Earliest
         };
         _serviceScopeFactory = serviceScopeFactory;
         _logger = logger;
+
         _consumer = new ConsumerBuilder<Ignore, string>(config).Build();
         var topic = configuration["Kafka:Topic"];
         if(string.IsNullOrWhiteSpace(topic))
@@ -45,7 +47,8 @@ public class KafkaConsumerWorker : BackgroundService
                         continue;
                     }
                     await processor.ProcessAsync(paymentEvent);
-                    _logger.LogInformation("Event {EventId} received by Kafka consumer with message {Message}", paymentEvent.EventId, paymentEvent.Message);
+                    _logger.LogInformation("Event {EventId} received by Kafka consumer with message {Message}",
+                     paymentEvent.EventId, paymentEvent.Message);
                 }
                 catch (Exception ex)
                 {

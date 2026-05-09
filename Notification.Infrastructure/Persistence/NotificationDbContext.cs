@@ -12,4 +12,10 @@ public class NotificationDbContext : DbContext
     }
 
     public DbSet<NotificationEntity> Notifications {get;set;}
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        builder.Entity<NotificationEntity>()
+            .Property(x => x.Status)
+            .HasConversion<string>();
+    }
 }

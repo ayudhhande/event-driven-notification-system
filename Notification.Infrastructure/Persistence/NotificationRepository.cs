@@ -16,4 +16,10 @@ public class NotificationRepository : INotificationRepository
         _notificationDbContext.Notifications.Add(notification);
         await _notificationDbContext.SaveChangesAsync();
     }
+
+    public async Task UpdateAsync(NotificationEntity notification)
+    {
+        _notificationDbContext.Notifications.Update(notification);
+        await _notificationDbContext.SaveChangesAsync();
+    }
 }

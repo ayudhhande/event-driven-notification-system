@@ -8,6 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Confluent.Kafka" Version="2.14.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="9.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="BackgroudWorkers/" />
+    <Folder Include="Consumers/" />
+    <Folder Include="Services/" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Notification.Domain/Notification.Domain.csproj" />
+    <ProjectReference Include="../Notification.Infrastructure/Notification.Infrastructure.csproj" />
   </ItemGroup>
 </Project>
