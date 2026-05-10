@@ -22,4 +22,10 @@ public class NotificationRepository : INotificationRepository
         _notificationDbContext.Notifications.Update(notification);
         await _notificationDbContext.SaveChangesAsync();
     }
+
+    public async Task<NotificationEntity?> GetByEventIdAsync(Guid eventId)
+    {
+        var notificationEntity = _notificationDbContext.Notifications.Find(eventId);
+        return notificationEntity;
+    }
 }

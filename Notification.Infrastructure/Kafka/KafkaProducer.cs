@@ -26,12 +26,12 @@ public class KafkaProducer: IKafkaProducer
         _logger = logger;
     }
 
-    public async Task PublishAsync<PaymentEvent>(PaymentEvent message)
+    public async Task PublishAsync(PaymentEvent message)
     {
         try
         {
             var json = JsonSerializer.Serialize(message);
-            string topic = _configuration["Kafka:Topic"] ?? string.Empty;
+            string topic = _configuration["Kafka:Topic"] ?? "payment-events";
             await _producer.ProduceAsync(topic, new Message<Null, string>
             {
                 Value = json

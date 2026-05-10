@@ -4,7 +4,8 @@ public enum PaymentStatus
     {
         PENDING,
         SENT,
-        FAILED
+        FAILED,
+        DEAD_LETTERED
     }
 
     public enum PaymentEventType

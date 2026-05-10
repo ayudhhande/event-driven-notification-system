@@ -17,6 +17,7 @@ namespace Notification.Domain
     public class NotificationEntity
     {
         public Guid Id { get; set; } //uuid
+        public Guid EventId {get;set;}
         public int UserId { get; set; }
         public PaymentEventType EventType { get; set; }
         public string Message { get; set; }

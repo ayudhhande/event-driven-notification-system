@@ -3,7 +3,7 @@ using Notification.Domain;
 
 namespace Notification.Infrastructure.Kafka;
 
-public interface IKafkaProducer
+public interface IDlqProducer
 {
     Task PublishAsync(PaymentEvent message);
 }

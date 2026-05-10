@@ -7,4 +7,5 @@ public interface INotificationRepository
 {
     Task AddAsync(NotificationEntity notification);
     Task UpdateAsync(NotificationEntity notification);
+    Task<NotificationEntity?> GetByEventIdAsync(Guid eventId);
 }

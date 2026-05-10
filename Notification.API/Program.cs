@@ -27,6 +27,7 @@ builder.Services.AddScoped<INotificationRepository, NotificationRepository>();
 builder.Services.AddScoped<IKafkaProducer, KafkaProducer>();
 builder.Services.AddScoped<INotificationService, NotificationService>();
 builder.Services.AddScoped<INotificationProcessor, NotificationProcessor>();
+builder.Services.AddScoped<IDlqProducer, DlqProducer>();
 
 var app = builder.Build();
 
